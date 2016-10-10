@@ -66,12 +66,7 @@ namespace CW1
         {
 
         }
-
-        /*public Attendee(bool pad, bool prese)
-        {
-            attref = attendeeRef;
-        }*/
-
+        
         public double AttendeeRef
         {
             get { return attendeeRef; }
