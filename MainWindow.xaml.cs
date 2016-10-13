@@ -20,9 +20,6 @@ using System.Windows.Shapes;
 
 namespace CW1
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -44,7 +41,7 @@ namespace CW1
             if (Double.TryParse(txtAttendee.Text, out tempnum))
             {
                 attendee1.AttendeeRef = Double.Parse(txtAttendee.Text);     // This block of code will test the contents of the attendeeRef text box to
-            } else                                                          // check if it is either: not blank/not a string. If the contents of the box is a valid
+            } else                                                          // check if it is either: not blank/not a string. If the content of the box is a valid
             {                                                               // number, the variable will take the value. If not, an error message will appear.
                 MessageBox.Show("Please enter a valid number!");
             }
@@ -73,6 +70,7 @@ namespace CW1
             {
                 attendee1.Presenter = true;
             }
+            
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
@@ -90,12 +88,22 @@ namespace CW1
 
         private void btnGet_Click(object sender, RoutedEventArgs e)
         {
+            Attendee attendee2 = new Attendee(82734, "Scooby", "Doo", "Academy", "Spooks", "Full", true, false, "difunsdf");    // Use of constructor to set the values of the object.
 
+            txtName1.Text = attendee2.FirstName;
+            txtName2.Text = attendee2.SecondName;                           // Updating all of the variables to the values of
+            txtAttendee.Text = attendee2.AttendeeRef.ToString();            // the class.
+            txtInstitution.Text = attendee2.InstitutionName;
+            txtConference.Text = attendee2.ConferenceName;
+            cmbReg.Text = attendee2.RegType;
+            checkPaid.IsChecked = attendee2.Paid;
+            checkPresenter.IsChecked = attendee2.Presenter;
+            txtTitle.Text = attendee2.PaperTitle;
         }
 
         private void btnInvoice_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void btnCertificate_Click(object sender, RoutedEventArgs e)
