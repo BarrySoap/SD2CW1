@@ -78,10 +78,10 @@ namespace CW1
             txtName1.Text = "";
             txtName2.Text = "";
             txtAttendee.Text = "";
-            txtInstitution.Text = "";
-            txtConference.Text = "";
+            txtInstitution.Text = "";                                       // Clear all of the fields by setting all of the values
+            txtConference.Text = "";                                        // to nothing.
             checkPaid.IsChecked = false;
-            checkPresenter.IsChecked = false;
+            checkPresenter.IsChecked = false;                               // Or uncheck.
             cmbReg.SelectedIndex = -1;
             txtTitle.Text = "";
         }
@@ -103,12 +103,18 @@ namespace CW1
 
         private void btnInvoice_Click(object sender, RoutedEventArgs e)
         {
-            
+            Invoice inv = new Invoice();
+            inv.Show();
+            MessageBox.Show("iodfnsdfs");
+            inv.Close();
         }
 
         private void btnCertificate_Click(object sender, RoutedEventArgs e)
         {
-
+            Certificate cert = new Certificate();
+            cert.Show();
+            MessageBox.Show("sdiunfsoiudfnsf");
+            cert.Close();
         }
 
         private void checkPaid_Checked(object sender, RoutedEventArgs e)

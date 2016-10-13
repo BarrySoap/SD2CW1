@@ -52,13 +52,16 @@ namespace CW1
             return 0;
         }
 
-        public Attendee(string fn, string sn, string inst, string conf, string regt, string papr)
+        public Attendee(double attref, string fn, string sn, string inst, string conf, string regt, bool pad, bool prese, string papr)
         {
-            fn = firstName;
-            sn = secondName;
-            inst = institutionName;
-            conf = conferenceName;
-            regt = regType;
+            attendeeRef = attref;
+            firstName = fn;
+            secondName = sn;
+            institutionName = inst;
+            conferenceName = conf;
+            regType = regt;
+            paid = pad;
+            presenter = prese;
             paperTitle = papr;
         }
          

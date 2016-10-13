@@ -19,13 +19,12 @@ using System.Windows.Shapes;
 
 namespace CW1
 {
-    /// <summary>
-    /// Interaction logic for Invoice.xaml
-    /// </summary>
     public partial class Invoice : Window
     {
         public Invoice()
         {
+            Attendee attendee1 = new Attendee();
+
             InitializeComponent();
         }
     }
