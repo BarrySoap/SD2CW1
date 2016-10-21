@@ -21,11 +21,13 @@ namespace CW1
 {
     public partial class Invoice : Window
     {
-        public Invoice()
+        public Invoice(ref Attendee attendee1)
         {
-            Attendee attendee1 = new Attendee();
-
             InitializeComponent();
+
+            txtInvoice.Text = ("Name: " + attendee1.FirstName + " " + attendee1.SecondName + "\n" + 
+                               "Institution: " + attendee1.InstitutionName + "\n" +
+                               "Price: " + attendee1.getCost());
         }
     }
 }

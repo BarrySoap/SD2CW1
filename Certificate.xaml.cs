@@ -16,11 +16,9 @@ namespace CW1
 {
     public partial class Certificate : Window
     {
-        public Certificate()
+        public Certificate(ref Attendee attendee1)
         {
             InitializeComponent();
-
-            Attendee attendee1 = new Attendee();
 
             if (attendee1.Presenter == true)
             {
@@ -34,8 +32,7 @@ namespace CW1
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            Certificate inv = new Certificate();
-            inv.Close();
+            this.Close();
         }
     }
 }

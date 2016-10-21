@@ -22,6 +22,8 @@ namespace CW1
 {
     public partial class MainWindow : Window
     {
+        Attendee attendee1 = new Attendee();                            // Creating the attendee object
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,8 +31,6 @@ namespace CW1
 
         private void btnSet_Click(object sender, RoutedEventArgs e)
         {
-            Attendee attendee1 = new Attendee();                            // Creating the attendee object
-
             double tempnum;
             attendee1.FirstName = txtName1.Text;
             attendee1.SecondName = txtName2.Text;
@@ -44,6 +44,11 @@ namespace CW1
             } else                                                          // check if it is either: not blank/not a string. If the content of the box is a valid
             {                                                               // number, the variable will take the value. If not, an error message will appear.
                 MessageBox.Show("Please enter a valid number!");
+            }
+
+            if (attendee1.AttendeeRef < 40000 || attendee1.AttendeeRef > 60000)
+            {
+                MessageBox.Show("Invalid Input, must be a number between 40000 - 60000", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             switch (cmbReg.SelectedIndex)
@@ -70,7 +75,6 @@ namespace CW1
             {
                 attendee1.Presenter = true;
             }
-            
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
@@ -88,33 +92,28 @@ namespace CW1
 
         private void btnGet_Click(object sender, RoutedEventArgs e)
         {
-            Attendee attendee2 = new Attendee(82734, "Scooby", "Doo", "Academy", "Spooks", "Full", true, false, "difunsdf");    // Use of constructor to set the values of the object.
-
-            txtName1.Text = attendee2.FirstName;
-            txtName2.Text = attendee2.SecondName;                           // Updating all of the variables to the values of
-            txtAttendee.Text = attendee2.AttendeeRef.ToString();            // the class.
-            txtInstitution.Text = attendee2.InstitutionName;
-            txtConference.Text = attendee2.ConferenceName;
-            cmbReg.Text = attendee2.RegType;
-            checkPaid.IsChecked = attendee2.Paid;
-            checkPresenter.IsChecked = attendee2.Presenter;
-            txtTitle.Text = attendee2.PaperTitle;
+            txtName1.Text = attendee1.FirstName;
+            txtName2.Text = attendee1.SecondName;                           // Updating all of the variables to the values of
+            txtAttendee.Text = attendee1.AttendeeRef.ToString();            // the class.
+            txtInstitution.Text = attendee1.InstitutionName;
+            txtConference.Text = attendee1.ConferenceName;
+            cmbReg.Text = attendee1.RegType;
+            checkPaid.IsChecked = attendee1.Paid;
+            checkPresenter.IsChecked = attendee1.Presenter;
+            txtTitle.Text = attendee1.PaperTitle;
         }
 
         private void btnInvoice_Click(object sender, RoutedEventArgs e)
         {
-            Invoice inv = new Invoice();
+
+            Invoice inv = new Invoice(ref attendee1);
             inv.Show();
-            MessageBox.Show("iodfnsdfs");
-            inv.Close();
         }
 
         private void btnCertificate_Click(object sender, RoutedEventArgs e)
         {
-            Certificate cert = new Certificate();
+            Certificate cert = new Certificate(ref attendee1);
             cert.Show();
-            MessageBox.Show("sdiunfsoiudfnsf");
-            cert.Close();
         }
 
         private void checkPaid_Checked(object sender, RoutedEventArgs e)
