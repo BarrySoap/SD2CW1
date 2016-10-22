@@ -88,14 +88,40 @@ namespace CW1
 
         public string FirstName
         {
-            get { return firstName; }
-            set { firstName = value; }
+            get
+            {
+                return firstName;
+            }
+            set
+            {
+                if (value.Length > 0)
+                {
+                    firstName = value;
+                }
+                else
+                {
+                    MessageBox.Show("The first name field cannot be left blank!");
+                }
+            }
         }
 
         public string SecondName
         {
-            get { return secondName; }
-            set { secondName = value; }
+            get
+            {
+                return secondName;
+            }
+            set
+            {
+                if (value.Length > 0)
+                {
+                    secondName = value;
+                }
+                else
+                {
+                    MessageBox.Show("The last name field cannot be left blank!");
+                }
+            }
         }
 
         public string InstitutionName
@@ -106,8 +132,21 @@ namespace CW1
 
         public string ConferenceName
         {
-            get { return conferenceName; }
-            set { conferenceName = value; }
+            get
+            {
+                return conferenceName;
+            }
+            set
+            {
+                if (value.Length > 0)
+                {
+                    conferenceName = value;
+                }
+                else
+                {
+                    MessageBox.Show("The conference name field cannot be left blank!");
+                }
+            }
         }
 
         public string RegType
@@ -130,8 +169,20 @@ namespace CW1
 
         public string PaperTitle
         {
-            get { return paperTitle; }
-            set { paperTitle = value; }
+            get
+            {
+                return paperTitle;
+            }
+            set
+            {
+                if (presenter == true)
+                {
+                    MessageBox.Show("As you are a presenter, the paper title field cannot be left blank!");
+                } else
+                {
+                    paperTitle = value;
+                }
+            }
         }
     }
 }
