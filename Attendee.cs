@@ -7,16 +7,14 @@ using System.Windows;
 
 /* Author: Glenn Wilkie-Sullivan (40208762)
  * Class Purpose: Contains properties for the attendee, calculates cost and uses getters/setters for each property
- * Date last modified: 10/10/2016
+ * Date last modified: 22/10/2016
  */
 
 namespace CW1
 {
-    public class Attendee
+    public class Attendee : Person
     {
         private double attendeeRef;
-        private string firstName;
-        private string secondName;
         private string institutionName;
         private string conferenceName;
         private string regType;
@@ -52,19 +50,6 @@ namespace CW1
             return conferenceCost;
         }
 
-        public Attendee(double attref, string fn, string sn, string inst, string conf, string regt, bool pad, bool prese, string papr)
-        {
-            attendeeRef = attref;
-            firstName = fn;
-            secondName = sn;
-            institutionName = inst;
-            conferenceName = conf;
-            regType = regt;
-            paid = pad;
-            presenter = prese;
-            paperTitle = papr;
-        }
-         
         public Attendee()
         {
 
@@ -83,44 +68,6 @@ namespace CW1
                     MessageBox.Show("Invalid Input, must be a number between 40000 - 60000", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 attendeeRef = value;
-            }
-        }
-
-        public string FirstName
-        {
-            get
-            {
-                return firstName;
-            }
-            set
-            {
-                if (value.Length > 0)
-                {
-                    firstName = value;
-                }
-                else
-                {
-                    MessageBox.Show("The first name field cannot be left blank!");
-                }
-            }
-        }
-
-        public string SecondName
-        {
-            get
-            {
-                return secondName;
-            }
-            set
-            {
-                if (value.Length > 0)
-                {
-                    secondName = value;
-                }
-                else
-                {
-                    MessageBox.Show("The last name field cannot be left blank!");
-                }
             }
         }
 
@@ -169,20 +116,23 @@ namespace CW1
 
         public string PaperTitle
         {
-            get
-            {
-                return paperTitle;
-            }
-            set
-            {
-                if (presenter == true)
-                {
-                    MessageBox.Show("As you are a presenter, the paper title field cannot be left blank!");
-                } else
-                {
-                    paperTitle = value;
-                }
-            }
+            get { return paperTitle; }
+            set { paperTitle = value; }
+
+            /* get
+             {
+                 return paperTitle;
+             }
+             set
+             {
+                 if (presenter == true && paperTitle.Length > 0)
+                 {
+                     paperTitle = value;
+                 } else
+                 {
+                     MessageBox.Show("As you are a presenter, the paper title field cannot be left blank!");
+                 }
+             }*/
         }
     }
 }

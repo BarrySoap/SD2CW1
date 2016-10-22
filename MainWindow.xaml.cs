@@ -42,7 +42,7 @@ namespace CW1
             {
                 attendee1.AttendeeRef = Double.Parse(txtAttendee.Text);     // This block of code will test the contents of the attendeeRef text box to
             }
-            else                                                          // check if it is either: not blank/not a string. If the content of the box is a valid
+            else                                                            // check if it is either: not blank/not a string. If the content of the box is a valid
             {                                                               // number, the variable will take the value. If not, an error message will appear.
                 MessageBox.Show("Please enter a valid number!");
             }
@@ -119,9 +119,7 @@ namespace CW1
 
         private void checkPresenter_Checked(object sender, RoutedEventArgs e)
         {
-
+            
         }
-
-        
     }
 }

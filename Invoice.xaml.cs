@@ -29,7 +29,7 @@ namespace CW1
             txtInvoice.Text = ("Name: " + attendee1.FirstName + " " + attendee1.SecondName + "\n" + 
                                "Institution: " + attendee1.InstitutionName + "\n" +
                                "Conference Name: " + attendee1.ConferenceName + "\n" +
-                               "Price: " + attendee1.getCost());
+                               "Price paid/to be paid: " + attendee1.getCost());
         }
     }
 }
