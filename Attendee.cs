@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 /* Author: Glenn Wilkie-Sullivan (40208762)
  * Class Purpose: Contains properties for the attendee, calculates cost and uses getters/setters for each property
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CW1
 {
-    public class Attendee : Person
+    public class Attendee
     {
         private double attendeeRef;
         private string firstName;
@@ -23,8 +24,7 @@ namespace CW1
         private bool presenter = false;
         private string paperTitle;
         private double conferenceCost;
-
-        public int getCost()
+        public double getCost()
         {
             if (regType == "Full")
             {
@@ -49,7 +49,7 @@ namespace CW1
                 conferenceCost = 0;
             }
 
-            return 0;
+            return conferenceCost;
         }
 
         public Attendee(double attref, string fn, string sn, string inst, string conf, string regt, bool pad, bool prese, string papr)
@@ -72,8 +72,18 @@ namespace CW1
         
         public double AttendeeRef
         {
-            get { return attendeeRef; }
-            set { attendeeRef = value; }
+            get
+            {
+                return attendeeRef;
+            }
+            set
+            {
+                if (value < 40000 || value > 60000)
+                {
+                    MessageBox.Show("Invalid Input, must be a number between 40000 - 60000", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                attendeeRef = value;
+            }
         }
 
         public string FirstName

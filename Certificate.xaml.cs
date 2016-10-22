@@ -12,6 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+/* Author: Glenn Wilkie-Sullivan (40208762)
+ * Class Purpose: This window will represent an certificate of the attendee,
+ *                showing their name, conference name and possibly their
+ *                paper title.
+ * Date last modified: 22/10/2016
+ */
+
 namespace CW1
 {
     public partial class Certificate : Window

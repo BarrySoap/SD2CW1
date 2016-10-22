@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 /* Author: Glenn Wilkie-Sullivan (40208762)
  * Class Purpose: This is the GUI of the program, allows the user to easily enter data, remove data, etc.
- * Date last modified: 10/10/2016
+ * Date last modified: 22/10/2016
  */
 
 namespace CW1
@@ -29,7 +29,7 @@ namespace CW1
             InitializeComponent();
         }
 
-        private void btnSet_Click(object sender, RoutedEventArgs e)
+        private void btnSet_Click(object sender, RoutedEventArgs e)         // Encompasses the code executed when the user presses 'Set' on the GUI
         {
             double tempnum;
             attendee1.FirstName = txtName1.Text;
@@ -41,14 +41,10 @@ namespace CW1
             if (Double.TryParse(txtAttendee.Text, out tempnum))
             {
                 attendee1.AttendeeRef = Double.Parse(txtAttendee.Text);     // This block of code will test the contents of the attendeeRef text box to
-            } else                                                          // check if it is either: not blank/not a string. If the content of the box is a valid
+            }
+            else                                                          // check if it is either: not blank/not a string. If the content of the box is a valid
             {                                                               // number, the variable will take the value. If not, an error message will appear.
                 MessageBox.Show("Please enter a valid number!");
-            }
-
-            if (attendee1.AttendeeRef < 40000 || attendee1.AttendeeRef > 60000)
-            {
-                MessageBox.Show("Invalid Input, must be a number between 40000 - 60000", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             switch (cmbReg.SelectedIndex)
@@ -77,7 +73,7 @@ namespace CW1
             }
         }
 
-        private void btnClear_Click(object sender, RoutedEventArgs e)
+        private void btnClear_Click(object sender, RoutedEventArgs e)       // Encompasses the code executed when the user presses 'Clear' on the GUI
         {
             txtName1.Text = "";
             txtName2.Text = "";
@@ -90,7 +86,7 @@ namespace CW1
             txtTitle.Text = "";
         }
 
-        private void btnGet_Click(object sender, RoutedEventArgs e)
+        private void btnGet_Click(object sender, RoutedEventArgs e)         // Encompasses the code executed when the user presses 'Get' on the GUI
         {
             txtName1.Text = attendee1.FirstName;
             txtName2.Text = attendee1.SecondName;                           // Updating all of the variables to the values of
@@ -103,16 +99,16 @@ namespace CW1
             txtTitle.Text = attendee1.PaperTitle;
         }
 
-        private void btnInvoice_Click(object sender, RoutedEventArgs e)
+        private void btnInvoice_Click(object sender, RoutedEventArgs e)     // Encompasses the code executed when the user presses 'Invoice' on the GUI
         {
 
-            Invoice inv = new Invoice(ref attendee1);
+            Invoice inv = new Invoice(ref attendee1);                       // Creating and opening a new window object for Invoice
             inv.Show();
         }
 
-        private void btnCertificate_Click(object sender, RoutedEventArgs e)
+        private void btnCertificate_Click(object sender, RoutedEventArgs e) // Encompasses the code executed when the user presses 'Certificate' on the GUI
         {
-            Certificate cert = new Certificate(ref attendee1);
+            Certificate cert = new Certificate(ref attendee1);              // Creating and opening a new window object for Certificate
             cert.Show();
         }
 

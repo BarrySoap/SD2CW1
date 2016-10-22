@@ -13,8 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 /* Author: Glenn Wilkie-Sullivan (40208762)
- * Class Purpose: This window will represent an invoice
- * Date last modified: 10/10/2016
+ * Class Purpose: This window will represent an invoice, displaying the name,
+ *                institiution, conference and cost of the attendee.
+ * Date last modified: 22/10/2016
  */
 
 namespace CW1
@@ -27,6 +28,7 @@ namespace CW1
 
             txtInvoice.Text = ("Name: " + attendee1.FirstName + " " + attendee1.SecondName + "\n" + 
                                "Institution: " + attendee1.InstitutionName + "\n" +
+                               "Conference Name: " + attendee1.ConferenceName + "\n" +
                                "Price: " + attendee1.getCost());
         }
     }
