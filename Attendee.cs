@@ -16,7 +16,7 @@ namespace CW1
     {
         private double attendeeRef;
         private string institutionName;
-        private string conferenceName;
+        private string conferenceName;                      // Initialise variables
         private string regType;
         private bool paid = false;
         private bool presenter = false;
@@ -29,7 +29,7 @@ namespace CW1
                 conferenceCost = 500;
                 if (presenter == true)
                 {
-                    conferenceCost = conferenceCost - (conferenceCost / 10);
+                    conferenceCost = conferenceCost - (conferenceCost / 10);        // Remove 10% from cost if the attendee is a presenter
                 }
             }
 
@@ -63,7 +63,7 @@ namespace CW1
             }
             set
             {
-                if (value < 40000 || value > 60000)
+                if (value < 40000 || value > 60000)                     // Validation for attendee ref, so that the value isn't outwith the given range. If it is, an error box will appear
                 {
                     MessageBox.Show("Invalid Input, attendee ref must be a number between 40000 - 60000", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
@@ -85,13 +85,13 @@ namespace CW1
             }
             set
             {
-                if (value.Length > 0)
+                if (value.Length > 0)                                                           // Simple check to see if the field is blank
                 {
                     conferenceName = value;
                 }
                 else
                 {
-                    MessageBox.Show("The conference name field cannot be left blank!");
+                    MessageBox.Show("The conference name field cannot be left blank!");         // If it is, an error will appear and the variable won't be updated.
                 }
             }
         }
@@ -107,7 +107,7 @@ namespace CW1
             get { return paid; }
             set { paid = value; }
         }
-
+                                                                    // Properties for the private variables.
         public bool Presenter
         {
             get { return presenter; }

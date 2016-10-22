@@ -48,12 +48,12 @@ namespace CW1
                 attendee1.PaperTitle = txtTitle.Text;
             }
 
-            if (Double.TryParse(txtAttendee.Text, out tempnum))
-            {
-                attendee1.AttendeeRef = Double.Parse(txtAttendee.Text);     // This block of code will test the contents of the attendeeRef text box to
+            if (Double.TryParse(txtAttendee.Text, out tempnum))                             // This block of code will test the contents of the attendeeRef text box to
+            {                                                                               // check if it is either: not blank/not a string. If the content of the box is a valid
+                attendee1.AttendeeRef = Double.Parse(txtAttendee.Text);                     // number, the variable will take the value. If not, an error message will appear.
             }
-            else                                                            // check if it is either: not blank/not a string. If the content of the box is a valid
-            {                                                               // number, the variable will take the value. If not, an error message will appear.
+            else                                                            
+            {                                                               
                 MessageBox.Show("Please enter a valid number in the attendee ref box!");
             }
 

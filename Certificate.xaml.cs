@@ -27,11 +27,11 @@ namespace CW1
         {
             InitializeComponent();
 
-            if (attendee1.Presenter == true)
+            if (attendee1.Presenter == true)                    // If the attendee is a presenter, the certificate will show the following message.
             {
                 txtCertificate.Text = ("This is to certify that " + attendee1.FirstName + " " + attendee1.SecondName + " attended " + attendee1.ConferenceName + " and presented a paper entitled " + attendee1.PaperTitle + ".");
             }
-            else
+            else                                                // If not, the following message will appear.
             {
                 txtCertificate.Text = ("This is to certify that " + attendee1.FirstName + " " + attendee1.SecondName + " attended " + attendee1.ConferenceName + ".");
             }
@@ -39,7 +39,7 @@ namespace CW1
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.Close();                                       // Close the current object/window.
         }
     }
 }

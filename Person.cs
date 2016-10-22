@@ -14,7 +14,7 @@ namespace CW1
 {
     public class Person
     {
-        private string firstName;
+        private string firstName;                           // Initialise the name variables
         private string secondName;
 
         public string FirstName
@@ -22,16 +22,16 @@ namespace CW1
             get
             {
                 return firstName;
-            }
+            }                                               // Use properties to check
             set
-            {
-                if (value.Length > 0)
+            
+                if (value.Length > 0)                       // if the text box is not empty.
                 {
                     firstName = value;
                 }
                 else
                 {
-                    MessageBox.Show("The first name field cannot be left blank!");
+                    MessageBox.Show("The first name field cannot be left blank!");      // If it is empty, an error will appear.
                 }
             }
         }
