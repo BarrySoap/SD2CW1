@@ -65,7 +65,7 @@ namespace CW1
             {
                 if (value < 40000 || value > 60000)
                 {
-                    MessageBox.Show("Invalid Input, must be a number between 40000 - 60000", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Invalid Input, attendee ref must be a number between 40000 - 60000", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 attendeeRef = value;
             }
@@ -118,21 +118,6 @@ namespace CW1
         {
             get { return paperTitle; }
             set { paperTitle = value; }
-
-            /* get
-             {
-                 return paperTitle;
-             }
-             set
-             {
-                 if (presenter == true && paperTitle.Length > 0)
-                 {
-                     paperTitle = value;
-                 } else
-                 {
-                     MessageBox.Show("As you are a presenter, the paper title field cannot be left blank!");
-                 }
-             }*/
         }
     }
 }

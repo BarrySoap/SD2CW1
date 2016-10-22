@@ -36,7 +36,17 @@ namespace CW1
             attendee1.SecondName = txtName2.Text;
             attendee1.InstitutionName = txtInstitution.Text;
             attendee1.ConferenceName = txtConference.Text;
-            attendee1.PaperTitle = txtTitle.Text;
+
+            if(checkPresenter.IsChecked == true && txtTitle.Text == "")
+            {
+                MessageBox.Show("As you are a presenter, the paper title field cannot be blank!");
+            } else if (checkPresenter.IsChecked == false && txtTitle.Text != "")
+            {
+                MessageBox.Show("You can't present a paper without ticking the presenter box!");
+            } else
+            {
+                attendee1.PaperTitle = txtTitle.Text;
+            }
 
             if (Double.TryParse(txtAttendee.Text, out tempnum))
             {
@@ -44,7 +54,7 @@ namespace CW1
             }
             else                                                            // check if it is either: not blank/not a string. If the content of the box is a valid
             {                                                               // number, the variable will take the value. If not, an error message will appear.
-                MessageBox.Show("Please enter a valid number!");
+                MessageBox.Show("Please enter a valid number in the attendee ref box!");
             }
 
             switch (cmbReg.SelectedIndex)
@@ -61,7 +71,7 @@ namespace CW1
                     attendee1.RegType = "Organiser";
                     break;
             }
-
+            
             if (checkPaid.IsChecked == true)
             {
                 attendee1.Paid = true;                                      // Simple check to see if the check box is checked or not.
