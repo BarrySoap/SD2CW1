@@ -15,7 +15,11 @@ namespace CW1
     public class Attendee : Person
     {
         private double attendeeRef;
+<<<<<<< HEAD
         private string conferenceName;                      // Initialise variables with default values
+=======
+        private string conferenceName;                      // Initialise variables
+>>>>>>> dc9c44fc0e15dd60c579809fbd75330e6e4db362
         private string regType;
         private bool paid = false;
         private bool presenter = false;
@@ -66,6 +70,7 @@ namespace CW1
             }
         }
 
+<<<<<<< HEAD
         public string FirstName                                       // Property used to store the Attendee first name
         {
             get
@@ -75,6 +80,17 @@ namespace CW1
             set
             {
                 if (value.Length > 0)                                 // if the text box is not empty.
+=======
+        public string FirstName
+        {
+            get
+            {
+                return Person.firstName;                    // Name properties are stored and updated in the Person class
+            }                                               // Use properties to check
+            set
+            {
+                if (value.Length > 0)                       // if the text box is not empty.
+>>>>>>> dc9c44fc0e15dd60c579809fbd75330e6e4db362
                 {
                     Person.firstName = value;
                 }
@@ -85,7 +101,11 @@ namespace CW1
             }
         }
 
+<<<<<<< HEAD
         public string SecondName                                       // Property used to store the Attendee second name
+=======
+        public string SecondName
+>>>>>>> dc9c44fc0e15dd60c579809fbd75330e6e4db362
         {
             get
             {
@@ -104,7 +124,11 @@ namespace CW1
             }
         }
         
+<<<<<<< HEAD
         public string ConferenceName                                       // Property used to store the name of the conference (attended)
+=======
+        public string ConferenceName
+>>>>>>> dc9c44fc0e15dd60c579809fbd75330e6e4db362
         {
             get
             {
@@ -123,11 +147,16 @@ namespace CW1
             }
         }
 
+<<<<<<< HEAD
         public string InstitutionName                                       // Property used to store the name of the institution
+=======
+        public string InstitutionName
+>>>>>>> dc9c44fc0e15dd60c579809fbd75330e6e4db362
         {
             get { return Institution.institutionName; }
             set { Institution.institutionName = value; }
         }
+<<<<<<< HEAD
         
         public string InstitutionAddress
         {
@@ -136,6 +165,16 @@ namespace CW1
         }
 
         public string RegType                                               // Property used to store the registration type of the attendee
+=======
+                                                                                                // Values for the institution name and address
+        public string InstitutionAddress                                                        // are stored in the institution class.
+        {
+            get { return Institution.institutionAddress; }
+            set { Institution.institutionAddress = value; }
+        }
+
+        public string RegType
+>>>>>>> dc9c44fc0e15dd60c579809fbd75330e6e4db362
         {
             get { return regType; }
             set { regType = value; }
@@ -146,8 +185,13 @@ namespace CW1
             get { return paid; }
             set { paid = value; }
         }
+<<<<<<< HEAD
 
         public bool Presenter                                               // Property used to store the status of whether the attendee is a presenter or not
+=======
+                                                                                                // Properties for the private variables.
+        public bool Presenter
+>>>>>>> dc9c44fc0e15dd60c579809fbd75330e6e4db362
         {
             get { return presenter; }
             set { presenter = value; }

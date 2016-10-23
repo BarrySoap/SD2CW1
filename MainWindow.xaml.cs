@@ -132,7 +132,7 @@ namespace CW1
 
         private void checkPresenter_Checked(object sender, RoutedEventArgs e)
         {
-            
+
         }
     }
 }
