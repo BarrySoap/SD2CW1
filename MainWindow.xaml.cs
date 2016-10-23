@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 /* Author: Glenn Wilkie-Sullivan (40208762)
  * Class Purpose: This is the GUI of the program, allows the user to easily enter data, remove data, etc.
- * Date last modified: 22/10/2016
+ * Date last modified: 23/10/2016
  */
 
 namespace CW1
@@ -35,14 +35,15 @@ namespace CW1
             attendee1.FirstName = txtName1.Text;
             attendee1.SecondName = txtName2.Text;
             attendee1.InstitutionName = txtInstitution.Text;
+            attendee1.InstitutionAddress = txtInstitutionAdd.Text;
             attendee1.ConferenceName = txtConference.Text;
 
-            if(checkPresenter.IsChecked == true && txtTitle.Text == "")
-            {
+            if(checkPresenter.IsChecked == true && txtTitle.Text == "")                                 // Validate the paper title field by checking if presenter is checked with a
+            {                                                                                           // blank title field
                 MessageBox.Show("As you are a presenter, the paper title field cannot be blank!");
-            } else if (checkPresenter.IsChecked == false && txtTitle.Text != "")
+            } else if (checkPresenter.IsChecked == false && txtTitle.Text != "")                        // or if presenter isn't checked but the user has typed in a paper title
             {
-                MessageBox.Show("You can't present a paper without ticking the presenter box!");
+                MessageBox.Show("You can't present a paper without ticking the presenter box!");        // Both errors will bring up an error.
             } else
             {
                 attendee1.PaperTitle = txtTitle.Text;
@@ -89,7 +90,8 @@ namespace CW1
             txtName2.Text = "";
             txtAttendee.Text = "";
             txtInstitution.Text = "";                                       // Clear all of the fields by setting all of the values
-            txtConference.Text = "";                                        // to nothing.
+            txtInstitutionAdd.Text = "";                                    // to nothing.
+            txtConference.Text = "";
             checkPaid.IsChecked = false;
             checkPresenter.IsChecked = false;                               // Or uncheck.
             cmbReg.SelectedIndex = -1;
@@ -102,6 +104,7 @@ namespace CW1
             txtName2.Text = attendee1.SecondName;                           // Updating all of the variables to the values of
             txtAttendee.Text = attendee1.AttendeeRef.ToString();            // the class.
             txtInstitution.Text = attendee1.InstitutionName;
+            txtInstitutionAdd.Text = attendee1.InstitutionAddress;
             txtConference.Text = attendee1.ConferenceName;
             cmbReg.Text = attendee1.RegType;
             checkPaid.IsChecked = attendee1.Paid;

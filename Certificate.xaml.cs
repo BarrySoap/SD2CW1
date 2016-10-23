@@ -16,7 +16,7 @@ using System.Windows.Shapes;
  * Class Purpose: This window will represent an certificate of the attendee,
  *                showing their name, conference name and possibly their
  *                paper title.
- * Date last modified: 22/10/2016
+ * Date last modified: 23/10/2016
  */
 
 namespace CW1
