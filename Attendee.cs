@@ -7,7 +7,7 @@ using System.Windows;
 
 /* Author: Glenn Wilkie-Sullivan (40208762)
  * Class Purpose: Contains properties for the attendee, calculates cost and uses getters/setters for each property
- * Date last modified: 22/10/2016
+ * Date last modified: 23/10/2016
  */
 
 namespace CW1
@@ -15,7 +15,6 @@ namespace CW1
     public class Attendee : Person
     {
         private double attendeeRef;
-        private string institutionName;
         private string conferenceName;                      // Initialise variables
         private string regType;
         private bool paid = false;
@@ -71,12 +70,44 @@ namespace CW1
             }
         }
 
-        public string InstitutionName
+        public string FirstName
         {
-            get { return institutionName; }
-            set { institutionName = value; }
+            get
+            {
+                return Person.firstName;                    // Name properties are stored and updated in the Person class
+            }                                               // Use properties to check
+            set
+            {
+                if (value.Length > 0)                       // if the text box is not empty.
+                {
+                    Person.firstName = value;
+                }
+                else
+                {
+                    MessageBox.Show("The first name field cannot be left blank!");      // If it is empty, an error will appear.
+                }
+            }
         }
 
+        public string SecondName
+        {
+            get
+            {
+                return secondName;
+            }
+            set
+            {
+                if (value.Length > 0)
+                {
+                    secondName = value;
+                }
+                else
+                {
+                    MessageBox.Show("The last name field cannot be left blank!");
+                }
+            }
+        }
+        
         public string ConferenceName
         {
             get
@@ -96,6 +127,18 @@ namespace CW1
             }
         }
 
+        public string InstitutionName
+        {
+            get { return Institution.institutionName; }
+            set { Institution.institutionName = value; }
+        }
+                                                                                                // Values for the institution name and address
+        public string InstitutionAddress                                                        // are stored in the institution class.
+        {
+            get { return Institution.institutionAddress; }
+            set { Institution.institutionAddress = value; }
+        }
+
         public string RegType
         {
             get { return regType; }
@@ -107,7 +150,7 @@ namespace CW1
             get { return paid; }
             set { paid = value; }
         }
-                                                                    // Properties for the private variables.
+                                                                                                // Properties for the private variables.
         public bool Presenter
         {
             get { return presenter; }
