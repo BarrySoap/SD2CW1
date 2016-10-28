@@ -1,0 +1,35 @@
+﻿<Window x:Class="CW1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Label x:Name="lblName" Content="Name" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label x:Name="lblRef" Content="Attendee Ref" HorizontalAlignment="Left" Height="25" Margin="10,40,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="lblInstitution" Content="Institution Name" HorizontalAlignment="Left" Height="25" Margin="10,70,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="lblConference" Content="Conference Name" HorizontalAlignment="Left" Height="25" Margin="10,129,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="lblRegistration" Content="Registration Type" HorizontalAlignment="Left" Height="30" Margin="10,159,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="lblPaid" Content="Paid" HorizontalAlignment="Left" Height="25" Margin="10,189,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label x:Name="lblPresenter" Content="Presenter" HorizontalAlignment="Left" Height="25" Margin="10,219,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="lblTitle" Content="Paper Title" HorizontalAlignment="Left" Height="25" Margin="10,249,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnSet" Content="Set" HorizontalAlignment="Left" Height="25" Margin="66,279,0,0" VerticalAlignment="Top" Width="69" Click="btnSet_Click"/>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Height="25" Margin="146,279,0,0" VerticalAlignment="Top" Width="70" Click="btnClear_Click"/>
+        <Button x:Name="btnGet" Content="Get" HorizontalAlignment="Left" Height="25" Margin="228,279,0,0" VerticalAlignment="Top" Width="70" Click="btnGet_Click"/>
+        <Button x:Name="btnInvoice" Content="Invoice" HorizontalAlignment="Left" Height="25" Margin="310,279,0,0" VerticalAlignment="Top" Width="70" Click="btnInvoice_Click"/>
+        <Button x:Name="btnCertificate" Content="Certificate" HorizontalAlignment="Left" Height="25" Margin="391,279,0,0" VerticalAlignment="Top" Width="70" Click="btnCertificate_Click"/>
+        <TextBox x:Name="txtName1" HorizontalAlignment="Left" Height="25" Margin="146,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtName2" HorizontalAlignment="Left" Height="25" Margin="271,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtAttendee" HorizontalAlignment="Left" Height="25" Margin="146,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtInstitution" HorizontalAlignment="Left" Height="25" Margin="146,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtConference" HorizontalAlignment="Left" Height="25" Margin="146,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Height="25" Margin="146,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cmbReg" HorizontalAlignment="Left" Height="25" Margin="146,159,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Full"/>
+            <ComboBoxItem Content="Student"/>
+            <ComboBoxItem Content="Organiser"/>
+        </ComboBox>
+        <CheckBox x:Name="checkPaid" Content="Check if paid" HorizontalAlignment="Left" Height="25" Margin="146,189,0,0" VerticalAlignment="Top" Width="120" Checked="checkPaid_Checked"/>
+        <CheckBox x:Name="checkPresenter" Content="Check if you are a presenter" HorizontalAlignment="Left" Height="25" Margin="146,219,0,0" VerticalAlignment="Top" Width="170" Checked="checkPresenter_Checked"/>
+        <Label x:Name="lblInstitutionAdd" Content="Institution Address" HorizontalAlignment="Left" Height="25" Margin="10,99,0,0" VerticalAlignment="Top" Width="124"/>
+        <TextBox x:Name="txtInstitutionAdd" HorizontalAlignment="Left" Height="25" Margin="146,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+    </Grid>
+</Window>
