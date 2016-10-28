@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 /* Author: Glenn Wilkie-Sullivan (40208762)
  * Class Purpose: This is the GUI of the program, allows the user to easily enter data, remove data, etc.
- * Date last modified: 23/10/2016
+ * Date last modified: 28/10/2016
  */
 
 namespace CW1
@@ -41,10 +41,12 @@ namespace CW1
             if(checkPresenter.IsChecked == true && txtTitle.Text == "")                                 // Validate the paper title field by checking if presenter is checked with a
             {                                                                                           // blank title field
                 MessageBox.Show("As you are a presenter, the paper title field cannot be blank!");
-            } else if (checkPresenter.IsChecked == false && txtTitle.Text != "")                        // or if presenter isn't checked but the user has typed in a paper title
+            }
+            else if (checkPresenter.IsChecked == false && txtTitle.Text != "")                        // or if presenter isn't checked but the user has typed in a paper title
             {
                 MessageBox.Show("You can't present a paper without ticking the presenter box!");        // Both errors will bring up an error.
-            } else
+            }
+            else
             {
                 attendee1.PaperTitle = txtTitle.Text;
             }
@@ -132,7 +134,7 @@ namespace CW1
 
         private void checkPresenter_Checked(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
